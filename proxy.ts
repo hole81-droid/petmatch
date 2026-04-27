@@ -31,7 +31,8 @@ export async function proxy(request: NextRequest) {
 
   const isAuthRoute =
     request.nextUrl.pathname.startsWith("/login") ||
-    request.nextUrl.pathname.startsWith("/signup");
+    request.nextUrl.pathname.startsWith("/signup") ||
+    request.nextUrl.pathname.startsWith("/auth");
 
   // 비로그인 → 보호 경로 접근 시 /login으로 이동
   if (!user && !isAuthRoute) {
