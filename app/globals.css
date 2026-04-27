@@ -43,7 +43,8 @@
   --matcha-dark: #4f9b6f;
   --ink: #2b1d18;
   --brown: #4a3128;
-  --muted: oklch(0.97 0 0);
+  --muted: #8c7568;
+  --muted-bg: oklch(0.97 0 0);
   --line: rgba(74, 49, 40, 0.14);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -79,12 +80,20 @@
 }
 
 body {
-  background-color: var(--cream);
+  background-color: #e0cfc8;
   color: var(--ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
 }
+
+/* Prevent double-tap zoom on mobile */
+* { touch-action: manipulation; }
+
+/* Scrollbar hide for swipe areas */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
 @theme inline {
 

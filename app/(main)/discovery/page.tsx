@@ -87,7 +87,7 @@ export default function DiscoveryPage() {
   }
 
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", background: "var(--cream)" }}>
+    <div style={{ height: "100dvh", maxHeight: "100%", display: "flex", flexDirection: "column", background: "var(--cream)", overflow: "hidden" }}>
       {/* Header */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 20px 8px" }}>
         <div>
