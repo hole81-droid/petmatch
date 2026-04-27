@@ -59,7 +59,7 @@ export default function SignupPage() {
         <h2 className="text-xl font-bold mb-2" style={{ color: "var(--ink)" }}>
           이메일을 확인해주세요
         </h2>
-        <p className="text-sm" style={{ color: "var(--muted)" }}>
+        <p className="text-sm" style={{ color: "var(--pm-muted)" }}>
           입력하신 이메일로 확인 링크를 보냈어요.<br />
           링크를 클릭하면 PetMatch가 시작돼요!
         </p>
@@ -132,7 +132,7 @@ export default function SignupPage() {
         </button>
       </form>
 
-      <p className="text-center text-xs mt-4" style={{ color: "var(--muted)" }}>
+      <p className="text-center text-xs mt-4" style={{ color: "var(--pm-muted)" }}>
         이미 계정이 있으신가요?{" "}
         <Link href="/login" className="font-bold" style={{ color: "var(--coral)" }}>
           로그인

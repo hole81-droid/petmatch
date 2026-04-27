@@ -80,11 +80,11 @@ export default function OnboardingStep5() {
       style={{ background: "rgba(255,255,255,0.72)", borderColor: "var(--line)", boxShadow: "0 12px 36px rgba(74,49,40,0.12)" }}
     >
       <h2 className="text-xl font-bold mb-1" style={{ color: "var(--ink)" }}>라이프스타일</h2>
-      <p className="text-sm mb-5" style={{ color: "var(--muted)" }}>일상 패턴을 알려주시면 잘 맞는 분을 찾아드려요</p>
+      <p className="text-sm mb-5" style={{ color: "var(--pm-muted)" }}>일상 패턴을 알려주시면 잘 맞는 분을 찾아드려요</p>
 
       {/* 산책 시간대 */}
       <div className="mb-5">
-        <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--muted)" }}>
+        <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--pm-muted)" }}>
           산책 시간대 (복수 선택)
         </label>
         <div className="flex flex-wrap gap-2">
@@ -105,7 +105,7 @@ export default function OnboardingStep5() {
 
       {/* 자주 가는 장소 */}
       <div className="mb-5">
-        <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--muted)" }}>
+        <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--pm-muted)" }}>
           자주 가는 공원·장소 (최대 3곳)
         </label>
         {locations.map((loc, i) => (
@@ -126,7 +126,7 @@ export default function OnboardingStep5() {
 
       {/* 카페 선호 */}
       <div className="mb-5">
-        <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--muted)" }}>
+        <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--pm-muted)" }}>
           펫 카페 동반 선호
         </label>
         <div className="flex gap-2">
@@ -146,7 +146,7 @@ export default function OnboardingStep5() {
 
       {/* 장소 유형 */}
       <div className="mb-5">
-        <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--muted)" }}>
+        <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--pm-muted)" }}>
           선호 장소 유형 (복수 선택)
         </label>
         <div className="flex flex-wrap gap-2">

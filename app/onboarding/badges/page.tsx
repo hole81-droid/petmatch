@@ -54,7 +54,7 @@ export default function OnboardingStep3() {
 
   const chipStyle = (selected: boolean) => ({
     background: selected ? "var(--matcha)" : "var(--latte-soft)",
-    color: selected ? "var(--brown)" : "var(--muted)",
+    color: selected ? "var(--brown)" : "var(--pm-muted)",
     border: selected ? "2px solid var(--matcha-dark)" : "2px solid transparent",
   });
 
@@ -73,7 +73,7 @@ export default function OnboardingStep3() {
       style={{ background: "rgba(255,255,255,0.72)", borderColor: "var(--line)", boxShadow: "0 12px 36px rgba(74,49,40,0.12)" }}
     >
       <h2 className="text-xl font-bold mb-1" style={{ color: "var(--ink)" }}>성향 & 신뢰 정보</h2>
-      <p className="text-sm mb-5" style={{ color: "var(--muted)" }}>다른 보호자가 안심하고 만날 수 있도록 알려주세요</p>
+      <p className="text-sm mb-5" style={{ color: "var(--pm-muted)" }}>다른 보호자가 안심하고 만날 수 있도록 알려주세요</p>
 
       {/* 신뢰 뱃지 토글 */}
       <div className="space-y-3 mb-5">
@@ -111,7 +111,7 @@ export default function OnboardingStep3() {
         { label: "사람 친화도",   value: humanFriendly, set: setHumanFriendly },
       ].map(({ label, value, set }) => (
         <div key={label} className="mb-4">
-          <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--muted)" }}>{label}</label>
+          <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--pm-muted)" }}>{label}</label>
           <div className="flex gap-2">
             {FRIENDLINESS.map((f) => (
               <button
@@ -130,7 +130,7 @@ export default function OnboardingStep3() {
 
       {/* 성격 태그 */}
       <div className="mb-5">
-        <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--muted)" }}>
+        <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--pm-muted)" }}>
           성격 태그 (복수 선택)
         </label>
         <div className="flex flex-wrap gap-2">

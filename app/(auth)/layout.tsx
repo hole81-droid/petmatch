@@ -13,7 +13,7 @@ export default function AuthLayout({
           <h1 className="text-3xl font-bold tracking-tight" style={{ color: "var(--ink)" }}>
             PetMatch
           </h1>
-          <p className="text-sm mt-1" style={{ color: "var(--muted)" }}>
+          <p className="text-sm mt-1" style={{ color: "var(--pm-muted)" }}>
             같은 공원, 같은 시간, 진짜 인연
           </p>
         </div>

@@ -34,7 +34,7 @@ export default function OnboardingLayout({ children }: { children: React.ReactNo
               <span
                 key={s.path}
                 className="text-xs font-semibold"
-                style={{ color: i <= step ? "var(--coral)" : "var(--muted)" }}
+                style={{ color: i <= step ? "var(--coral)" : "var(--pm-muted)" }}
               >
                 {s.label}
               </span>
@@ -49,7 +49,7 @@ export default function OnboardingLayout({ children }: { children: React.ReactNo
               }}
             />
           </div>
-          <p className="text-right text-xs mt-1" style={{ color: "var(--muted)" }}>
+          <p className="text-right text-xs mt-1" style={{ color: "var(--pm-muted)" }}>
             {step + 1} / {STEPS.length}
           </p>
         </div>

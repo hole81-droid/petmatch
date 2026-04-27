@@ -77,7 +77,7 @@ export default function LoginPage() {
 
       <div className="flex items-center gap-3 my-4">
         <div className="flex-1 h-px" style={{ background: "var(--line)" }} />
-        <span className="text-xs" style={{ color: "var(--muted)" }}>또는</span>
+        <span className="text-xs" style={{ color: "var(--pm-muted)" }}>또는</span>
         <div className="flex-1 h-px" style={{ background: "var(--line)" }} />
       </div>
 
@@ -125,7 +125,7 @@ export default function LoginPage() {
         </button>
       </form>
 
-      <p className="text-center text-xs mt-4" style={{ color: "var(--muted)" }}>
+      <p className="text-center text-xs mt-4" style={{ color: "var(--pm-muted)" }}>
         계정이 없으신가요?{" "}
         <Link href="/signup" className="font-bold" style={{ color: "var(--coral)" }}>
           회원가입

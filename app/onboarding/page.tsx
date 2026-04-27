@@ -41,11 +41,11 @@ export default function OnboardingStep1() {
       style={{ background: "rgba(255,255,255,0.72)", borderColor: "var(--line)", boxShadow: "0 12px 36px rgba(74,49,40,0.12)" }}
     >
       <h2 className="text-xl font-bold mb-1" style={{ color: "var(--ink)" }}>보호자 정보</h2>
-      <p className="text-sm mb-5" style={{ color: "var(--muted)" }}>내 소개를 입력해주세요</p>
+      <p className="text-sm mb-5" style={{ color: "var(--pm-muted)" }}>내 소개를 입력해주세요</p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
         <div>
-          <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--muted)" }}>닉네임</label>
+          <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--pm-muted)" }}>닉네임</label>
           <input
             {...register("nickname")}
             placeholder="예: 몽이아빠"
@@ -56,7 +56,7 @@ export default function OnboardingStep1() {
         </div>
 
         <div>
-          <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--muted)" }}>동네</label>
+          <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--pm-muted)" }}>동네</label>
           <input
             {...register("region")}
             placeholder="예: 마포구 합정동"
@@ -67,7 +67,7 @@ export default function OnboardingStep1() {
         </div>
 
         <div>
-          <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--muted)" }}>한 줄 소개 (선택)</label>
+          <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--pm-muted)" }}>한 줄 소개 (선택)</label>
           <textarea
             {...register("bio")}
             placeholder="예: 매일 아침 한강 산책해요 🌅"

@@ -39,7 +39,7 @@ export default function OnboardingStep4() {
       style={{ background: "rgba(255,255,255,0.72)", borderColor: "var(--line)", boxShadow: "0 12px 36px rgba(74,49,40,0.12)" }}
     >
       <h2 className="text-xl font-bold mb-1" style={{ color: "var(--ink)" }}>만남의 목적</h2>
-      <p className="text-sm mb-5" style={{ color: "var(--muted)" }}>어떤 만남을 원하세요? (복수 선택)</p>
+      <p className="text-sm mb-5" style={{ color: "var(--pm-muted)" }}>어떤 만남을 원하세요? (복수 선택)</p>
 
       <div className="grid grid-cols-2 gap-3 mb-5">
         {PURPOSE_TAGS.map((tag) => {

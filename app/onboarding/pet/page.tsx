@@ -101,12 +101,12 @@ export default function OnboardingStep2() {
       style={{ background: "rgba(255,255,255,0.72)", borderColor: "var(--line)", boxShadow: "0 12px 36px rgba(74,49,40,0.12)" }}
     >
       <h2 className="text-xl font-bold mb-1" style={{ color: "var(--ink)" }}>반려동물 정보</h2>
-      <p className="text-sm mb-5" style={{ color: "var(--muted)" }}>우리 아이를 소개해주세요</p>
+      <p className="text-sm mb-5" style={{ color: "var(--pm-muted)" }}>우리 아이를 소개해주세요</p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* 종류 */}
         <div>
-          <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--muted)" }}>종류</label>
+          <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--pm-muted)" }}>종류</label>
           <div className="flex gap-2">
             {SPECIES_OPTIONS.map((opt) => (
               <button
@@ -124,7 +124,7 @@ export default function OnboardingStep2() {
 
         {/* 이름 */}
         <div>
-          <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--muted)" }}>이름</label>
+          <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--pm-muted)" }}>이름</label>
           <input
             {...register("name")}
             placeholder="예: 몽이"
@@ -136,7 +136,7 @@ export default function OnboardingStep2() {
 
         {/* 품종 */}
         <div>
-          <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--muted)" }}>품종</label>
+          <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--pm-muted)" }}>품종</label>
           {breedList.length > 0 ? (
             <select
               {...register("breed")}
@@ -160,7 +160,7 @@ export default function OnboardingStep2() {
         {/* 나이 · 성별 · 체중 */}
         <div className="grid grid-cols-3 gap-2">
           <div>
-            <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--muted)" }}>나이(살)</label>
+            <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--pm-muted)" }}>나이(살)</label>
             <input
               {...register("age_years", { valueAsNumber: true })}
               type="number" min={0} max={30}
@@ -170,7 +170,7 @@ export default function OnboardingStep2() {
             />
           </div>
           <div>
-            <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--muted)" }}>성별</label>
+            <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--pm-muted)" }}>성별</label>
             <select
               {...register("gender")}
               className="w-full px-2 py-3 rounded-2xl border text-sm outline-none"
@@ -180,7 +180,7 @@ export default function OnboardingStep2() {
             </select>
           </div>
           <div>
-            <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--muted)" }}>체중(kg)</label>
+            <label className="text-xs font-bold uppercase tracking-wider mb-1 block" style={{ color: "var(--pm-muted)" }}>체중(kg)</label>
             <input
               {...register("weight_kg", { valueAsNumber: true })}
               type="number" step="0.1" min={0}
@@ -193,7 +193,7 @@ export default function OnboardingStep2() {
 
         {/* 사진 업로드 */}
         <div>
-          <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--muted)" }}>사진 (최대 5장)</label>
+          <label className="text-xs font-bold uppercase tracking-wider mb-2 block" style={{ color: "var(--pm-muted)" }}>사진 (최대 5장)</label>
           <label
             className="flex items-center justify-center w-full h-14 rounded-2xl border-2 border-dashed cursor-pointer text-sm font-semibold"
             style={{ borderColor: "var(--latte)", color: "var(--brown)" }}

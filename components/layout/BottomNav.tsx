@@ -33,7 +33,7 @@ export function BottomNav() {
               flex: 1, display: "flex", flexDirection: "column", alignItems: "center",
               padding: "10px 0 8px",
               textDecoration: "none",
-              color: active ? "var(--coral)" : "var(--muted)",
+              color: active ? "var(--coral)" : "var(--pm-muted)",
               fontWeight: active ? 800 : 500,
               fontSize: 11,
               gap: 2,
