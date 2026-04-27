@@ -95,6 +95,20 @@ body {
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* PetMatch v2 — serif heading helper (Fraunces) */
+.h-serif {
+  font-family: var(--font-serif), "Fraunces", "Georgia", ui-serif, serif;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+.label-mini {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pm-muted);
+}
+
 @theme inline {
 
   --font-heading: var(--font-sans);

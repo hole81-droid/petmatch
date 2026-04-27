@@ -5,22 +5,34 @@ interface Props {
   size?: "sm" | "md";
 }
 
+// 디자인보드 ".score" pill: 흰 캡슐 + coral-dark 텍스트
+// 점수에 따라 라벨 변화 (Cafe Match / Walk Match / OK Match)
 export function CompatibilityBadge({ score, size = "md" }: Props) {
-  let bg: string;
   let label: string;
-  if (score >= 80) { bg = "#a8d8b9"; label = "잘 맞아요"; }
-  else if (score >= 60) { bg = "#f4c06f"; label = "괜찮아요"; }
-  else { bg = "#c4b5ad"; label = "조금 달라요"; }
+  if (score >= 80) label = "Cafe Match";
+  else if (score >= 60) label = "Walk Match";
+  else label = "OK Match";
 
-  const px = size === "sm" ? "px-2 py-0.5 text-xs" : "px-3 py-1 text-sm";
+  const isSm = size === "sm";
 
   return (
     <span
-      className={`inline-flex items-center gap-1 rounded-full font-bold ${px}`}
-      style={{ background: bg, color: "#2b1d18" }}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 4,
+        padding: isSm ? "6px 10px" : "8px 12px",
+        borderRadius: 999,
+        background: "rgba(255,255,255,0.92)",
+        color: "var(--coral-dark)",
+        fontSize: isSm ? 11 : 13,
+        fontWeight: 950,
+        letterSpacing: "0.01em",
+        boxShadow: "0 6px 16px rgba(74,49,40,0.14)",
+        backdropFilter: "blur(10px)",
+      }}
     >
-      <span>{score}점</span>
-      {size === "md" && <span className="opacity-70">· {label}</span>}
+      {score}% {label}
     </span>
   );
 }
