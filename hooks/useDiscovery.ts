@@ -53,6 +53,11 @@ export function useDiscovery(filters: DiscoveryFilters = {}) {
       .from("swipes").select("swiped_id").eq("swiper_id", myPetRow.id);
     const swipedIds = new Set((swipeRows ?? []).map((s) => s.swiped_id as string));
 
+    // Blocked user IDs
+    const { data: blockRows } = await supabase
+      .from("reports").select("reported_id").eq("reporter_id", user.id).eq("reason", "BLOCK");
+    const blockedIds = new Set((blockRows ?? []).map((r) => r.reported_id as string));
+
     // Query other pets
     let query = supabase
       .from("pets")
@@ -83,6 +88,7 @@ export function useDiscovery(filters: DiscoveryFilters = {}) {
     const result: DiscoveryPet[] = [];
     for (const row of petRows) {
       if (swipedIds.has(row.id as string)) continue;
+      if (blockedIds.has(row.owner_id as string)) continue;
 
       const lifestyle = (row.pet_lifestyles as unknown as PetLifestyle[] | null)?.[0] ?? null;
 

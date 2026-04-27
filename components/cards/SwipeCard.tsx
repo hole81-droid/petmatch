@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { CompatibilityBadge } from "./CompatibilityBadge";
+import { ReportModal } from "./ReportModal";
 import { PURPOSE_TAGS } from "@/constants/petData";
 import type { DiscoveryPet } from "@/hooks/useDiscovery";
 
@@ -10,13 +11,15 @@ const GENDER_LABEL: Record<string, string> = { MALE: "수컷", FEMALE: "암컷",
 interface Props {
   data: DiscoveryPet;
   onTap: () => void;
+  onBlock?: (ownerId: string) => void;
   style?: React.CSSProperties;
   dragHandleProps?: React.HTMLAttributes<HTMLDivElement>;
 }
 
-export function SwipeCard({ data, onTap, style, dragHandleProps }: Props) {
+export function SwipeCard({ data, onTap, onBlock, style, dragHandleProps }: Props) {
   const { pet, owner, score } = data;
-  const [photoIdx, setPhotoIdx] = useState(0);
+  const [photoIdx, setPhotoIdx]   = useState(0);
+  const [showReport, setShowReport] = useState(false);
 
   const photos = pet.photos.length > 0
     ? pet.photos
@@ -84,9 +87,16 @@ export function SwipeCard({ data, onTap, style, dragHandleProps }: Props) {
           </>
         )}
 
-        {/* Compatibility badge */}
-        <div style={{ position: "absolute", top: 12, right: 12 }}>
+        {/* Compatibility badge + report button */}
+        <div style={{ position: "absolute", top: 12, right: 12, display: "flex", gap: 6, alignItems: "center" }}>
           <CompatibilityBadge score={score.total} size="sm" />
+          <button
+            onClick={(e) => { e.stopPropagation(); setShowReport(true); }}
+            style={{ width: 28, height: 28, borderRadius: "50%", background: "rgba(255,255,255,0.7)", border: "none", fontSize: 14, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
+            aria-label="신고"
+          >
+            ⋯
+          </button>
         </div>
       </div>
 
@@ -122,6 +132,15 @@ export function SwipeCard({ data, onTap, style, dragHandleProps }: Props) {
 
         <div style={{ fontSize: 11, color: "#c4b5ad", textAlign: "center" }}>탭해서 궁합 자세히 보기</div>
       </div>
+
+      {showReport && (
+        <ReportModal
+          reportedUserId={owner.id}
+          petName={pet.name}
+          onClose={() => setShowReport(false)}
+          onBlock={() => onBlock?.(owner.id)}
+        />
+      )}
     </div>
   );
 }

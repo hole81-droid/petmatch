@@ -139,7 +139,11 @@ export default function DiscoveryPage() {
               dragElastic={0.7}
               onDragEnd={onDragEnd}
             >
-              <SwipeCard data={cards[0]} onTap={() => setScoreDetail(cards[0])} />
+              <SwipeCard
+                data={cards[0]}
+                onTap={() => setScoreDetail(cards[0])}
+                onBlock={(ownerId) => setCards((prev) => prev.filter((c) => c.owner.id !== ownerId))}
+              />
               <motion.div style={{ position: "absolute", inset: 0, borderRadius: 24, background: "rgba(168,216,185,0.6)", opacity: likeOpacity, pointerEvents: "none", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <span style={{ fontSize: 64 }}>❤️</span>
               </motion.div>
